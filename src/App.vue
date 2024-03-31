@@ -7,14 +7,14 @@ import { RouterLink, RouterView } from 'vue-router'
     <div>
       <nav>
         <RouterLink to="/">Posts</RouterLink> -
-        <RouterLink to="/authors">Authors</RouterLink>
+        <!--<RouterLink to="/authors">Authors</RouterLink> -->
       </nav>
     </div>
   </header>
 
   <RouterView />
 </template>
-#23c9cc
+
 <style scoped lang="scss">
 .navbar {
   background-color: #9beef1;
