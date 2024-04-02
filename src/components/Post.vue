@@ -14,17 +14,58 @@ fetchComments()
 </script>
 
 <template>
-  <div>
-    <div>
-      <h2>{{ post.title }}</h2>
-      <p v-if="author">
-        Written by: <RouterLink :to="`/author/${author.username}`">{{ author.name }}</RouterLink> |
-        <span>Comments: {{ getPostComments.length }}</span>
-      </p>
-      <p>{{ post.body }}</p>
-    </div>
-    <hr />
-    <h3>Comments:</h3>
-    <comment :comments="getPostComments"></comment>
+  <div class="post-container">
+    <h2>{{ post.title }}</h2>
+    <p v-if="author" class="post-info">
+      Written by:
+      <RouterLink :to="`/author/${author.username}`" class="author-link">{{
+        author.name
+      }}</RouterLink>
+      |
+      <span class="comments-info">Comments: {{ getPostComments.length }}</span>
+    </p>
+    <p class="post-body">{{ post.body }}</p>
+    <hr class="divider" />
+    <h3 class="comments-heading">Comments:</h3>
+    <Comment :comments="getPostComments"></Comment>
   </div>
 </template>
+
+<style scoped lang="scss">
+.post-container {
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.post-info {
+  color: #666;
+}
+
+.author-link {
+  color: #e2b121;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.comments-info {
+  margin-left: 1rem;
+}
+
+.post-body {
+  margin-top: 0.5rem;
+  color: #333;
+}
+
+.divider {
+  margin-top: 1.5rem;
+}
+
+.comments-heading {
+  margin-top: 1rem;
+  color: #333;
+}
+</style>
