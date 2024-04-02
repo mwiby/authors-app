@@ -42,7 +42,6 @@ fetchPosts()
 .post-title {
   font-size: 1.2rem;
   color: #333;
-  text-decoration: none;
 
   &:hover {
     color: #d1ae49;
