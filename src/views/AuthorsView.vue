@@ -15,6 +15,7 @@ fetchAuthors()
       <RouterLink :to="`/author/${author.username}`" class="author-link">{{
         author.name
       }}</RouterLink>
+      <span class="website-link">{{ author.website }}</span>
     </div>
   </div>
 </template>
@@ -26,16 +27,27 @@ fetchAuthors()
 }
 
 .author {
+  display: flex;
+  flex-direction: column;
   background-color: #f4f4f4;
   padding: 1rem;
   border-radius: 5px;
 }
 
 .author-link {
+  font-size: 1.1rem;
+  font-weight: bold;
   color: #000;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
 
   &:hover {
     color: #d1ae49;
   }
+}
+
+.website-link {
+  color: #666;
+  font-style: italic;
 }
 </style>
